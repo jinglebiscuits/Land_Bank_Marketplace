@@ -4441,7 +4441,7 @@ Runner.prototype.checkGlobals = function(test){
   var isNode = process.kill;
   var leaks;
 
-  // check length - 2 ('errno' and 'location' globals)
+  // check length - 2 ('errno' and 'loc' globals)
   if (isNode && 1 == ok.length - globals.length) return;
   else if (2 == ok.length - globals.length) return;
 
@@ -5575,9 +5575,9 @@ mocha.setup = function(opts){
 
 mocha.run = function(fn){
   var options = mocha.options;
-  mocha.globals('location');
+  mocha.globals('loc');
 
-  var query = Mocha.utils.parseQuery(global.location.search || '');
+  var query = Mocha.utils.parseQuery(global.loc.search || '');
   if (query.grep) mocha.grep(query.grep);
   if (query.invert) mocha.invert();
 
