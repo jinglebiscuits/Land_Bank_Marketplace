@@ -1,0 +1,28 @@
+      .pages {
+          position: absolute;
+          top: 0;
+          right: 0;
+          z-index: 4;
+          padding: 0;
+          overflow: auto;
+      }
+      
+      .pages > div {
+          padding: 0 5px;
+          padding-top: 64px;
+      }
+      
+      .page {
+          transform: translateY(1080px);
+          transition: transform 0 linear;
+          display: none;
+          opacity: 0;
+          font-size: 16px;
+      }
+      
+      .page.active {
+          transform: translateY(0px);
+          transition: all 0.3s ease-out;
+          display: block;
+          opacity: 1;
+      }

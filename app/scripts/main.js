@@ -5,7 +5,9 @@ var loc = 'FULL_ADDRESS';
 
 function initialize() {
     var layer;
-    google.load("visualization", "1");
+    google.load("visualization", "1", {
+        packages: ['table']
+    });
     var mapOptions = {
         zoom: 13,
         center: new google.maps.LatLng(33.5205556, -86.8025)
@@ -29,7 +31,7 @@ function initialize() {
     });
 
     var input = document.getElementById('input');
-//    console.log(input.value);
+    //    console.log(input.value);
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
     layer.setMap(map);
 }
@@ -55,28 +57,72 @@ function updateMap(layer, tableID) {
     }
 }
 
-function autoComplete(tableId) {
-    var queryText = encodeURIComponent(
-        "SELECT" + loc +
-        "FROM" + tableId );
-    var query = new google.visualization.Query(
-        'http://www.google.com/fusiontables/gvizdata?tq=' + queryText);
+function drawTable() {
+        var queryText = encodeURIComponent(
+            " SELECT 'FULL_ADDRESS' as address,'PARCELID' as id, 'ASSESSEDTO' as value " + " FROM " + tableID);
+        console.log(queryText);
+        var query = new google.visualization.Query(
+            'http://www.google.com/fusiontables/gvizdata?tq=' + queryText);
 
-    query.send(function (response) {
-        var numRows = response.getDataTable().getNumberOfRows();
+        query.send(function (response) {
+            //        var table = new google.visualization.Table(
+            //            document.getElementById('visualization'));
+            //        table.draw(response.getDataTable(), {
+            //            showRowNumber: true
+            //          });
+            //        });
 
-        // Create the list of results for display of autocomplete.
-        var results = [];
-        for (var i = 0; i < numRows; i++) {
-            results.push(response.getDataTable().getValue(i, 0));
-        }
+            var numRows = response.getDataTable().getNumberOfRows();
+            var numCols = response.getDataTable().getNumberOfColumns();
+            var ftdata = ['<table class="table table-striped table-hover "><thead><tr>'];
+            for (var i = 0; i < numCols; i++) {
+            var columnTitle = response.getDataTable().getColumnLabel(i);
+            ftdata.push('<th>' + columnTitle + '</th>');
+          }
+          ftdata.push('</tr></thead><tbody>');
+            for (var i = 0; i < numRows; i++) {
+            ftdata.push('<tr>');
+            for(var j = 0; j < numCols; j++) {
+              var rowValue = response.getDataTable().getValue(i, j);
+              ftdata.push('<td>' + rowValue + '</td>');
+            }
+            ftdata.push('</tr>');
+          }
+          ftdata.push('</tbody></table>');
+          document.getElementById('ft-data').innerHTML = ftdata.join('');
 
-        // Use the results to create the autocomplete options.
-        console.log(results);
-        $('#input').typeahead([
-            results
-        ]);
-    });
-}
+            // Create the list of results for display of autocomplete.
+//            var results = [];
+//            for (var i = 0; i < numRows; i++) {
+//                console.log(response.getDataTable().getValue(i, 0));
+//                results.push(response.getDataTable().getValue(i, 0));
+//            }
+        });
+        //
+        //        // Use the results to create the autocomplete options.
+        //        console.log(results);
+        //        return results;
 
+    }
+    //
+    //function drawTable() {
+    //    var query = "SELECT 'Scoring Team' as Scoring, " +
+    //        "'Receiving Team' as Receiving, 'Minute of goal' as Minute " +
+    //        'FROM 1VlPiBCkYt_Vio-JT3UwM-U__APurJvPb6ZEJPg';
+    //    var team = document.getElementById('team').value;
+    //    if (team) {
+    //        query += " WHERE 'Scoring Team' = '" + team + "'";
+    //    }
+    //    var queryText = encodeURIComponent(query);
+    //    var gvizQuery = new google.visualization.Query(
+    //        'http://www.google.com/fusiontables/gvizdata?tq=' + queryText);
+    //
+    //    gvizQuery.send(function (response) {
+    //        var table = new google.visualization.Table(
+    //            document.getElementById('visualization'));
+    //        table.draw(response.getDataTable(), {
+    //            showRowNumber: true
+    //        });
+    //    });
+    //}
 google.setOnLoadCallback(initialize());

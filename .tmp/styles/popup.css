@@ -1,0 +1,33 @@
+      .pages {
+          position: absolute;
+          top: 0;
+          right: 0;
+          z-index: 4;
+          padding: 0;
+          overflow: auto;
+      }
+      
+      .pages > div {
+          padding: 0 5px;
+          padding-top: 64px;
+      }
+      
+      .page {
+          -webkit-transform: translateY(1080px);
+              -ms-transform: translateY(1080px);
+                  transform: translateY(1080px);
+          transition: -webkit-transform 0 linear;
+          transition: transform 0 linear;
+          display: none;
+          opacity: 0;
+          font-size: 16px;
+      }
+      
+      .page.active {
+          -webkit-transform: translateY(0px);
+              -ms-transform: translateY(0px);
+                  transform: translateY(0px);
+          transition: all 0.3s ease-out;
+          display: block;
+          opacity: 1;
+      }
