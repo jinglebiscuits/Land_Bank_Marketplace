@@ -2,9 +2,9 @@
 var map;
 var tableID = '1MbTC65NjQ2Pxp9r0Ir_SnavY9NDzltgUUUIfOVKh';
 var loc = 'FULL_ADDRESS';
+var LAYER;
 
 function initialize() {
-    var layer;
     google.load("visualization", "1", {
         packages: ['table']
     });
@@ -14,7 +14,7 @@ function initialize() {
     };
     map = new google.maps.Map(document.getElementById('map-canvas'),
         mapOptions);
-    layer = new google.maps.FusionTablesLayer({
+    LAYER = new google.maps.FusionTablesLayer({
         query: {
             select: loc,
             from: tableID,
@@ -23,43 +23,47 @@ function initialize() {
     google.maps.event.addDomListener(document.getElementById('input'), 'keydown', function (e) {
         if (e.keyCode == 13) {
             var input = document.getElementById('input').value;
-            //            console.log(document.getElementById('input').value);
 
-            updateMap(layer, tableID, input)
+            updateMap(LAYER, tableID, input)
             e.preventDefault();
         }
     });
 
     var input = document.getElementById('input');
-    //    console.log(input.value);
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-    layer.setMap(map);
+    LAYER.setMap(map);
 }
 
-function updateMap(oldLayer, tableID) {
-    
+function updateMap(layer, tableID) {
+
+    var searchString = document.getElementById('input').value;
+    layer.setQuery("SELECT 'PARCELID' FROM " + tableID );
+
+    //    console.log(document.getElementById('input').value);
+    //    console.log(input.value);
     //    var loc = document.getElementById('input').value;
-    var input = document.getElementById('input').value;
-    var addressQuery = encodeURIComponent(" SELECT 'FULL_ADDRESS' " + " FROM " + tableID + " WHERE ('FULL_ADDRESS' LIKE '%" + input + "%')");
+    //    var input = document.getElementById('input').value;
+    //    var addressQuery = encodeURIComponent(" SELECT 'FULL_ADDRESS' " + " FROM " + tableID + " WHERE ('FULL_ADDRESS' LIKE '%" + input + "%')");
     //    var parcelQuery = encodeURIComponent(" SELECT PARCELID " + " FROM " + tableID + " WHERE ('PARCELID' LIKE \'% " + input + " %\')");
-//    var query = null;
-//    var results = [];
-    console.log(input);
-    if (typeof input == "string") {
-        var newLayer = new google.maps.FusionTablesLayer({
-            query: {
-                select:'FULL_ADDRESS' ,
-                from: tableID,
-                where: "ASSESSEDTO > 1000"
-            }
-        });
-        if (newLayer)
-        console.log(newLayer);
-        oldLayer.setMap(null);
-        newLayer.setMap(map);
-    } else {
-        console.log("huh?!?!");
-    }
+    //    var query = null;
+    //    var results = [];
+    //    console.log(input);
+    //    if (typeof input == "string") {
+    //        var newLayer = new google.maps.FusionTablesLayer({
+    //            query: {
+    //                select: 'FULL_ADDRESS',
+    //                from: tableID,
+    //                where: "FULL_ADDRESS LIKE %" + input + "%"
+    //            }
+    //        });
+    //        if (newLayer)
+    //            console.log(newLayer);
+    //        oldLayer.setMap(null);
+    //        newLayer.setMap(map);
+    //        oldLayer = newLayer;
+    //    } else {
+    //        console.log("huh?!?!");
+    //    }
 
 }
 
