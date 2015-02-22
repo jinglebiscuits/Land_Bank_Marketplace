@@ -18,7 +18,10 @@ function initialize() {
         query: {
             select: loc,
             from: tableID,
-        }
+        },
+        map: map,
+        styleId: 1,
+        templateId: 2
     });
     google.maps.event.addDomListener(document.getElementById('input'), 'keydown', function (e) {
         if (e.keyCode == 13) {
@@ -69,7 +72,8 @@ function updateMap(layer, tableID) {
 
 function drawTable() {
         var queryText = encodeURIComponent(
-            " SELECT 'FULL_ADDRESS' as address,'PARCELID' as id, 'ASSESSEDTO' as value " + " FROM " + tableID);
+            //" SELECT 'FULL_ADDRESS' as address,'PARCELID' as id, 'ASSESSEDTO' as value " + " FROM " + tableID);
+            " SELECT 'FULL_ADDRESS' as address,'PARCELID' as id " + " FROM " + tableID);
         //        console.log(queryText);
         var query = new google.visualization.Query(
             'http://www.google.com/fusiontables/gvizdata?tq=' + queryText);
