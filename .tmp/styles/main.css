@@ -4,7 +4,6 @@ html, body, #map-canvas {
         padding: 0px
       }
 
-
 .controls {
         margin-top: 20px;
         border: 1px solid transparent;
@@ -33,3 +32,8 @@ html, body, #map-canvas {
         width: 401px;
       }
 
+body {
+  padding-top: 60px;
+}
+
+/*.googft-info-window { background-color: yellow }*/

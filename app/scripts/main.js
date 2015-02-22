@@ -18,7 +18,10 @@ function initialize() {
         query: {
             select: loc,
             from: tableID,
-        }
+        },
+        map: map,
+        styleId: 1,
+        templateId: 2
     });
     google.maps.event.addDomListener(document.getElementById('input'), 'keydown', function (e) {
         if (e.keyCode == 13) {
