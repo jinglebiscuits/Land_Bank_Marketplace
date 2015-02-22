@@ -65,7 +65,8 @@ function updateMap(oldLayer, tableID) {
 
 function drawTable() {
         var queryText = encodeURIComponent(
-            " SELECT 'FULL_ADDRESS' as address,'PARCELID' as id, 'ASSESSEDTO' as value " + " FROM " + tableID);
+            //" SELECT 'FULL_ADDRESS' as address,'PARCELID' as id, 'ASSESSEDTO' as value " + " FROM " + tableID);
+            " SELECT 'FULL_ADDRESS' as address,'PARCELID' as id " + " FROM " + tableID);
         //        console.log(queryText);
         var query = new google.visualization.Query(
             'http://www.google.com/fusiontables/gvizdata?tq=' + queryText);
