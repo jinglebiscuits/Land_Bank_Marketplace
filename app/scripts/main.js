@@ -39,8 +39,8 @@ function initialize() {
 
 function updateMap(layer, tableID) {
 
-    var searchString = document.getElementById('input').value;
-    layer.setQuery("SELECT 'PARCELID' FROM " + tableID );
+    var input = document.getElementById('input').value;
+    //    layer.setQuery("SELECT 'PARCELID' FROM " + tableID );
 
     //    console.log(document.getElementById('input').value);
     //    console.log(input.value);
@@ -51,73 +51,20 @@ function updateMap(layer, tableID) {
     //    var query = null;
     //    var results = [];
     //    console.log(input);
-    //    if (typeof input == "string") {
-    //        var newLayer = new google.maps.FusionTablesLayer({
-    //            query: {
-    //                select: 'FULL_ADDRESS',
-    //                from: tableID,
-    //                where: "FULL_ADDRESS LIKE %" + input + "%"
-    //            }
-    //        });
-    //        if (newLayer)
-    //            console.log(newLayer);
-    //        oldLayer.setMap(null);
-    //        newLayer.setMap(map);
-    //        oldLayer = newLayer;
-    //    } else {
-    //        console.log("huh?!?!");
-    //    }
+    var newLayer = new google.maps.FusionTablesLayer({
+        query: {
+            select: 'FULL_ADDRESS',
+            from: tableID,
+            where: "FULL_ADDRESS MATCHES  \'%" + input + "%\' "
+        }
+    });
+    console.log(newLayer);
+    layer.setMap(null);
+    newLayer.setMap(map);
+    LAYER = newLayer;
 
 }
 
-function drawTable() {
-        var queryText = encodeURIComponent(
-            //" SELECT 'FULL_ADDRESS' as address,'PARCELID' as id, 'ASSESSEDTO' as value " + " FROM " + tableID);
-            " SELECT 'FULL_ADDRESS' as address,'PARCELID' as id " + " FROM " + tableID);
-        //        console.log(queryText);
-        var query = new google.visualization.Query(
-            'http://www.google.com/fusiontables/gvizdata?tq=' + queryText);
-
-        query.send(function (response) {
-            //        var table = new google.visualization.Table(
-            //            document.getElementById('visualization'));
-            //        table.draw(response.getDataTable(), {
-            //            showRowNumber: true
-            //          });
-            //        });
-
-            var numRows = response.getDataTable().getNumberOfRows();
-            var numCols = response.getDataTable().getNumberOfColumns();
-            var ftdata = ['<table class="table table-striped table-hover "><thead><tr>'];
-            for (var i = 0; i < numCols; i++) {
-                var columnTitle = response.getDataTable().getColumnLabel(i);
-                ftdata.push('<th>' + columnTitle + '</th>');
-            }
-            ftdata.push('</tr></thead><tbody>');
-            for (var i = 0; i < numRows; i++) {
-                ftdata.push('<tr>');
-                for (var j = 0; j < numCols; j++) {
-                    var rowValue = response.getDataTable().getValue(i, j);
-                    ftdata.push('<td>' + rowValue + '</td>');
-                }
-                ftdata.push('</tr>');
-            }
-            ftdata.push('</tbody></table>');
-            document.getElementById('ft-data').innerHTML = ftdata.join('');
-
-            // Create the list of results for display of autocomplete.
-            //            var results = [];
-            //            for (var i = 0; i < numRows; i++) {
-            //                console.log(response.getDataTable().getValue(i, 0));
-            //                results.push(response.getDataTable().getValue(i, 0));
-            //            }
-        });
-        //
-        //        // Use the results to create the autocomplete options.
-        //        console.log(results);
-        //        return results;
-
-    }
     //
     //function drawTable() {
     //    var query = "SELECT 'Scoring Team' as Scoring, " +
