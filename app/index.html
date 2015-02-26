@@ -13,13 +13,14 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/material.css" />
     <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/ripples.css" />
-    <link rel="stylesheet" href="bower_components/datatables/media/css/jquery.dataTables.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <!-- DataTables CSS -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/pages.css">
+    <link rel="stylesheet" href="styles/popup.css">
     <!-- endbuild -->
 </head>
 
@@ -46,7 +47,14 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
-			<p>Looking to own a home or land for less? Interested in rehabilitating your community and city? Consider buying a LAND BANK property!</p><p> This website provides essential information about the land bank properties and enables a seamless communication between the city and interested buyers. Land banks properties are underused, abandoned, tax-delinquent ones that are made available for purchase by the city. The Land Bank Authority is established by the city to acquire these tax-delinquent properties, surplus properties of the local governments, and other properties located within the city in order to foster the public purpose of returning land which is in a non revenue‐ generating, nontax‐producing status to an effective utilization status in order to remove blight, provide housing, and stabilize neighborhoods for the citizens of the city.</p><p> To persuade and encourage the citizens to pursue such a noble effort, this website provides a seamless process that is time efficient and user friendly. We provide such a communication through this website which provides the following:</p> <p> 1) Efficient and easy identification of the land bank properties. A street address and zip code based search process is implemented along with an interactive map using Google Maps.</p><p> 2) Specifications of the property, like square footage and assessed damage.</p><p> 3) Important location based information like nearby grocery stores, malls, recreational areas and entertainment centers. This is achieved through the search abilities of the integrated Google Map.</p><p> 4) Pricing information and possible online bidding process if more than one party is interested. </p><p> 5) Possible advantages of buying a specified property. This is achieved through comments and inputs from citizens living in specific neighborhoods. These comments will be screened and categorized based on the zip code and address it came from. Along with the individual comments an overall consensus will also be posted.
+                    <p>Looking to own a home or land for less? Interested in rehabilitating your community and city? Consider buying a LAND BANK property!</p>
+                    <p> This website provides essential information about the land bank properties and enables a seamless communication between the city and interested buyers. Land banks properties are underused, abandoned, tax-delinquent ones that are made available for purchase by the city. The Land Bank Authority is established by the city to acquire these tax-delinquent properties, surplus properties of the local governments, and other properties located within the city in order to foster the public purpose of returning land which is in a non revenue‐ generating, nontax‐producing status to an effective utilization status in order to remove blight, provide housing, and stabilize neighborhoods for the citizens of the city.</p>
+                    <p> To persuade and encourage the citizens to pursue such a noble effort, this website provides a seamless process that is time efficient and user friendly. We provide such a communication through this website which provides the following:</p>
+                    <p> 1) Efficient and easy identification of the land bank properties. A street address and zip code based search process is implemented along with an interactive map using Google Maps.</p>
+                    <p> 2) Specifications of the property, like square footage and assessed damage.</p>
+                    <p> 3) Important location based information like nearby grocery stores, malls, recreational areas and entertainment centers. This is achieved through the search abilities of the integrated Google Map.</p>
+                    <p> 4) Pricing information and possible online bidding process if more than one party is interested. </p>
+                    <p> 5) Possible advantages of buying a specified property. This is achieved through comments and inputs from citizens living in specific neighborhoods. These comments will be screened and categorized based on the zip code and address it came from. Along with the individual comments an overall consensus will also be posted.
 
 
                 </div>
@@ -57,10 +65,7 @@
     <div id="table" class="modal fade" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-body">
-                    <input type="text" class="form-control floating-label" placeholder="Search For">
-                    <div id="ft-data"></div>
-
+                <div class="modal-body" id="ft-data">
                 </div>
             </div>
         </div>
@@ -70,9 +75,16 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
-			<p>Please refer the following link for policies and procedures: <a href="http://docs.birminghamal.gov/landbank/BLBA%20Policies.pdf">Birmningham Landbank Policies</a>.<p>Reproduced in part here:</p><p> Section 6. Conveyances from the BLBA </p><p>6.1 Transferee Qualifications and Reserve Discretion. The BLBA reserves full and complete discretion to decline applications and proposed transaction agreements from individuals and entities that meet any of the following criteria: a. Failure to perform in prior transactions with the BLBA; b. Ownership of properties that became delinquent in ad valorem tax payments and remain delinquent in ad valorem tax payments during their ownership; c. Parties that are barred from transactions with local government entities; d. Parties not able to demonstrate sufficient experience and capacity to perform property maintenance and application for property is in accordance with the requirements of the BLBA; e. Ownership of properties that have any unremediated citation for violation of the state and local codes and ordinances; f. Transferees or family members of transferees who use subject property as his or her personal residence at any time during the twelve (12) months immediately preceding the submission of application (except in rental cases). </p><p>6.2 Covenants, Conditions and Restrictions. All conveyances by the BLBA to third parties shall include such covenants, conditions and restrictions as the BLBA deems necessary and appropriate in its sole discretion to ensure the use, rehabilitation and redevelopment of the property in a manner consistent with the public purposes of the BLBA. Such requirements may take the form of a deed creating a defeasible fee, recorded restrictive covenants, subordinate financing being held by theBLBA, development agreements, or any combination thereof. In all cases, development agreements will delineate the standards and expectations that must be met to retain possession of the property. Failure to satisfy established conditions will result in Land Bank Authority control over the property. </p><p>6.3 Options. Options are available for up to 10% of the parcel value as determined by the BLBA for up to a twelve (12)‐month period. This fee will be credited to the parcel value at closing. If closing does not occur, the fee is forfeited. All option agreements are subject to all policies and procedures of the BLBA pertaining to property transfers. </p><p>6.4 Deed Without Warranty. All conveyances from the BLBA to third parties shall be by Quitclaim Deed.<p>
+                    <p>Please refer the following link for policies and procedures: <a href="http://docs.birminghamal.gov/landbank/BLBA%20Policies.pdf">Birmningham Landbank Policies</a>.
+                        <p>Reproduced in part here:</p>
+                        <p> Section 6. Conveyances from the BLBA </p>
+                        <p>6.1 Transferee Qualifications and Reserve Discretion. The BLBA reserves full and complete discretion to decline applications and proposed transaction agreements from individuals and entities that meet any of the following criteria: a. Failure to perform in prior transactions with the BLBA; b. Ownership of properties that became delinquent in ad valorem tax payments and remain delinquent in ad valorem tax payments during their ownership; c. Parties that are barred from transactions with local government entities; d. Parties not able to demonstrate sufficient experience and capacity to perform property maintenance and application for property is in accordance with the requirements of the BLBA; e. Ownership of properties that have any unremediated citation for violation of the state and local codes and ordinances; f. Transferees or family members of transferees who use subject property as his or her personal residence at any time during the twelve (12) months immediately preceding the submission of application (except in rental cases). </p>
+                        <p>6.2 Covenants, Conditions and Restrictions. All conveyances by the BLBA to third parties shall include such covenants, conditions and restrictions as the BLBA deems necessary and appropriate in its sole discretion to ensure the use, rehabilitation and redevelopment of the property in a manner consistent with the public purposes of the BLBA. Such requirements may take the form of a deed creating a defeasible fee, recorded restrictive covenants, subordinate financing being held by theBLBA, development agreements, or any combination thereof. In all cases, development agreements will delineate the standards and expectations that must be met to retain possession of the property. Failure to satisfy established conditions will result in Land Bank Authority control over the property. </p>
+                        <p>6.3 Options. Options are available for up to 10% of the parcel value as determined by the BLBA for up to a twelve (12)‐month period. This fee will be credited to the parcel value at closing. If closing does not occur, the fee is forfeited. All option agreements are subject to all policies and procedures of the BLBA pertaining to property transfers. </p>
+                        <p>6.4 Deed Without Warranty. All conveyances from the BLBA to third parties shall be by Quitclaim Deed.
+                            <p>
 
-                    </p>
+                            </p>
                 </div>
             </div>
         </div>
@@ -142,15 +154,49 @@
 
     <input id="input" class="controls floating-label" type="text" placeholder="Search by Address or Zip Code">
     <div id="map-canvas"></div>
+    
+    <div class="container footer">
+            <div class="row">
+                <div id="inbox">
+                    <div class="fab btn-group show-on-hover dropup">
+                        <div data-toggle="tooltip" data-placement="left" title="Compose" style="margin-left: 42px;">
+                            <button type="button" class="btn btn-danger btn-io dropdown-toggle" data-toggle="dropdown">
+                                <span class="fa-stack fa-2x">
+                                    <i class="fa fa-circle fa-stack-2x fab-backdrop"></i>
+                                    <i class="fa fa-plus fa-stack-1x fa-inverse fab-primary"></i>
+                                    <i class="fa fa-pencil fa-stack-1x fa-inverse fab-secondary"></i>
+                                </span>
+                            </button>
+                        </div>
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                            <li><a href="#" data-toggle="tooltip" data-placement="left" title="Twitter"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li><a href="#" data-toggle="tooltip" data-placement="left" title="Github"><i class="fa fa-github"></i></a>
+                            </li>
+                            <li><a href="#" data-toggle="tooltip" data-placement="left" title="Plus"><i class="fa fa-google-plus"></i></a>
+                            </li>
+                            <li><a href="#" data-toggle="tooltip" data-placement="left" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                            <li><a href="#" data-toggle="tooltip" data-placement="left" title="Facebook"><i class="fa fa-facebook"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     <!--    //?key=AIzaSyBi5eid5IfgKSvzAypanPcTAcHahRXvOJI-->
     <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script src="http://www.google.com/jsapi"></script>
+
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/bootstrap-material-design/dist/js/material.js"></script>
     <script src="bower_components/bootstrap-material-design/dist/js/ripples.js"></script>
     <script src="bower_components/typeahead.js/dist/typeahead.bundle.js"></script>
+    <script src="bower_components/listjs/dist/list.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -169,15 +215,17 @@
     <script src="bower_components/bootstrap/js/scrollspy.js"></script>
     <script src="bower_components/bootstrap/js/collapse.js"></script>
     <script src="bower_components/bootstrap/js/tab.js"></script>
-    <script src="bower_components/datatables/media/js/jquery.dataTables.js"></script>  
     <!-- endbuild -->
 
     <!-- build:js({app,.tmp}) scripts/main.js -->
-    
+
     <script src="scripts/main.js"></script>
     <script src="scripts/nav.js"></script>
     <script src="scripts/datatable.js"></script>
+    <script src="scripts/googleInfoWindow.js"></script>
+    <script src="scripts/popup.js"></script>
     
+
     <!-- DataTables -->
     <!-- endbuild -->
 </body>

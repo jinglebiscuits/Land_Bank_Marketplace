@@ -1,6 +1,5 @@
-$(document).ready(function(){
-	$(".googft-info-window").append("testing");
-	function openForm(){
-		alert("I was clicked");
-	}
-});
+//$(document).ready(function(){
+//	google.maps.event.addListener(marker,'click',function() {
+//        alert("was clicked");
+//    });
+//});

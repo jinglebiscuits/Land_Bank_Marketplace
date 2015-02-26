@@ -29,6 +29,5 @@
     "node": ">=0.10.0"
   },
   "dependencies": {
-    "datatables": "^1.10.5"
   }
 }

@@ -40,17 +40,6 @@ function initialize() {
 function updateMap(layer, tableID) {
 
     var input = document.getElementById('input').value;
-    //    layer.setQuery("SELECT 'PARCELID' FROM " + tableID );
-
-    //    console.log(document.getElementById('input').value);
-    //    console.log(input.value);
-    //    var loc = document.getElementById('input').value;
-    //    var input = document.getElementById('input').value;
-    //    var addressQuery = encodeURIComponent(" SELECT 'FULL_ADDRESS' " + " FROM " + tableID + " WHERE ('FULL_ADDRESS' LIKE '%" + input + "%')");
-    //    var parcelQuery = encodeURIComponent(" SELECT PARCELID " + " FROM " + tableID + " WHERE ('PARCELID' LIKE \'% " + input + " %\')");
-    //    var query = null;
-    //    var results = [];
-    //    console.log(input);
     var newLayer = new google.maps.FusionTablesLayer({
         query: {
             select: 'FULL_ADDRESS',
@@ -64,26 +53,4 @@ function updateMap(layer, tableID) {
     LAYER = newLayer;
 
 }
-
-    //
-    //function drawTable() {
-    //    var query = "SELECT 'Scoring Team' as Scoring, " +
-    //        "'Receiving Team' as Receiving, 'Minute of goal' as Minute " +
-    //        'FROM 1VlPiBCkYt_Vio-JT3UwM-U__APurJvPb6ZEJPg';
-    //    var team = document.getElementById('team').value;
-    //    if (team) {
-    //        query += " WHERE 'Scoring Team' = '" + team + "'";
-    //    }
-    //    var queryText = encodeURIComponent(query);
-    //    var gvizQuery = new google.visualization.Query(
-    //        'http://www.google.com/fusiontables/gvizdata?tq=' + queryText);
-    //
-    //    gvizQuery.send(function (response) {
-    //        var table = new google.visualization.Table(
-    //            document.getElementById('visualization'));
-    //        table.draw(response.getDataTable(), {
-    //            showRowNumber: true
-    //        });
-    //    });
-    //}
 google.setOnLoadCallback(initialize());
