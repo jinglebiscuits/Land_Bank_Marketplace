@@ -37,7 +37,7 @@
             </li>
             <li><a href="#" data-toggle="modal" data-target="#table" onclick="drawTable()">Table View</a>
             </li>
-            <li><a href="#" data-toggle="modal" data-target="#complete-dialog">Submit Offer</a>
+            <li><a href="#" data-toggle="modal" data-target="#request">Submit Offer</a>
             </li>
         </ul>
         <h3 class="brand">Birmingham Land Bank Marketplace</h3>
@@ -82,16 +82,11 @@
                         <p>6.2 Covenants, Conditions and Restrictions. All conveyances by the BLBA to third parties shall include such covenants, conditions and restrictions as the BLBA deems necessary and appropriate in its sole discretion to ensure the use, rehabilitation and redevelopment of the property in a manner consistent with the public purposes of the BLBA. Such requirements may take the form of a deed creating a defeasible fee, recorded restrictive covenants, subordinate financing being held by theBLBA, development agreements, or any combination thereof. In all cases, development agreements will delineate the standards and expectations that must be met to retain possession of the property. Failure to satisfy established conditions will result in Land Bank Authority control over the property. </p>
                         <p>6.3 Options. Options are available for up to 10% of the parcel value as determined by the BLBA for up to a twelve (12)‐month period. This fee will be credited to the parcel value at closing. If closing does not occur, the fee is forfeited. All option agreements are subject to all policies and procedures of the BLBA pertaining to property transfers. </p>
                         <p>6.4 Deed Without Warranty. All conveyances from the BLBA to third parties shall be by Quitclaim Deed.
-                            <p>
-
-                            </p>
                 </div>
             </div>
         </div>
     </div>
-
-
-    <div id="complete-dialog" class="modal fade" tabindex="-1">
+    <div id="request" class="modal fade" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -101,40 +96,50 @@
                 <div class="modal-body">
                     <fieldset>
                         <div class="form-group">
-                            <label for="inputName" class="col-lg-2 control-label">Name:</label>
-                            <div class="col-lg-10">
-                                <input type="text" class="form-control" id="inputName" placeholder="Name">
+                            <div class="row">
+                                <label for="inputName" class="col-lg-2 col-md-2 col-sm-2 control-label">Name:</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" id="inputName" placeholder="Name">
+                                </div>
                             </div>
-                            <label for="inputEmail" class="col-lg-2 control-label">Email:</label>
-                            <div class="col-lg-10">
-                                <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                            <div class="row">
+                                <label for="inputEmail" class="col-lg-2 col-md-2 col-sm-2 control-label">Email:</label>
+                                <div class="col-lg-9">
+                                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                                </div>
                             </div>
-                            <label for="inputPhone" class="col-lg-2 control-label">Phone:</label>
-                            <div class="col-lg-10">
-                                <input type="number" class="form-control" id="inputPhone" placeholder="Phone">
+                            <div class="row">
+                                <label for="inputPhone" class="col-lg-2 col-md-2 col-sm-2 control-label">Phone:</label>
+                                <div class="col-lg-9">
+                                    <input type="number" class="form-control" id="inputPhone" placeholder="Phone">
+                                </div>
                             </div>
-                            <label for="inputPropertyID" class="col-lg-2 control-label">Property ID:</label>
-                            <div class="col-lg-10">
-                                <input type="text" class="form-control" id="inputPropertyID" placeholder="Property ID">
+                            <div class="row">
+                                <label for="inputPropertyID" class="col-lg-2 col-md-2 col-sm-2 control-label">Property ID:</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" id="inputPropertyID" placeholder="Property ID">
+                                </div>
                             </div>
-                            <label for="inputPropertyAddress" class="col-lg-2 control-label">Property Address:</label>
-                            <div class="col-lg-10">
-                                <input type="text" class="form-control" id="inputPropertyAddress" placeholder="Property Address">
+                            <div class="row">
+                                <label for="inputPropertyAddress" class="col-lg-2 col-md-2 col-sm-2 control-label">Property Address:</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" id="inputPropertyAddress" placeholder="Property Address">
+                                </div>
                             </div>
-                            <label for="inputCity" class="col-lg-2 control-label">City:</label>
-                            <div class="col-lg-10">
-                                <input type="City" class="form-control" id="inputCity" placeholder="City">
+                            <div class="row">
+                                <label for="inputCity" class="col-lg-2 col-md-2 col-sm-2 control-label">City:</label>
+                                <div class="col-lg-9">
+                                    <input type="City" class="form-control" id="inputCity" placeholder="City">
+                                </div>
                             </div>
-
-
-                            <label for="textArea" class="col-lg-2 control-label">Reasons and Offer:</label>
-                            <div class="col-lg-10">
-                                <textarea class="form-control" rows="3" id="textArea"></textarea>
+                            <div class="row">
+                                <label for="textArea" class="col-lg-2 col-md-2 col-sm-2 control-label">Reasons and Offer:</label>
+                                <div class="col-lg-9">
+                                    <textarea class="form-control" rows="3" id="textArea"></textarea>
+                                </div>
                             </div>
-
                         </div>
                     </fieldset>
-
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-default" data-toggle="modal" data-target="#info">Additional Information</button>
@@ -144,49 +149,43 @@
             </div>
         </div>
     </div>
-    </div>
-
-
-
-
 
 
 
     <input id="input" class="controls floating-label" type="text" placeholder="Search by Address or Zip Code">
     <div id="map-canvas"></div>
-    
+
     <div class="container footer">
-            <div class="row">
-                <div id="inbox">
-                    <div class="fab btn-group show-on-hover dropup">
-                        <div data-toggle="tooltip" data-placement="left" title="Compose" style="margin-left: 42px;">
-                            <button type="button" class="btn btn-danger btn-io dropdown-toggle" data-toggle="dropdown">
-                                <span class="fa-stack fa-2x">
+        <div class="row">
+            <div id="inbox">
+                <div class="fab btn-group show-on-hover dropup">
+                    <div data-toggle="tooltip" data-placement="left" title="Compose" style="margin-left: 42px;">
+                        <button type="button" class="btn btn-danger btn-io dropdown-toggle" data-toggle="dropdown">
+                            <span class="fa-stack fa-2x">
                                     <i class="fa fa-circle fa-stack-2x fab-backdrop"></i>
                                     <i class="fa fa-plus fa-stack-1x fa-inverse fab-primary"></i>
                                     <i class="fa fa-pencil fa-stack-1x fa-inverse fab-secondary"></i>
                                 </span>
-                            </button>
-                        </div>
-                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
-                            <li><a href="#" data-toggle="tooltip" data-placement="left" title="Twitter"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#" data-toggle="tooltip" data-placement="left" title="Github"><i class="fa fa-github"></i></a>
-                            </li>
-                            <li><a href="#" data-toggle="tooltip" data-placement="left" title="Plus"><i class="fa fa-google-plus"></i></a>
-                            </li>
-                            <li><a href="#" data-toggle="tooltip" data-placement="left" title="Linkedin"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                            <li><a href="#" data-toggle="tooltip" data-placement="left" title="Facebook"><i class="fa fa-facebook"></i></a>
-                            </li>
-                        </ul>
+                        </button>
                     </div>
+                    <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                        <li><a href="#" data-toggle="tooltip" data-placement="left" title="Twitter"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li><a href="#" data-toggle="tooltip" data-placement="left" title="Github"><i class="fa fa-github"></i></a>
+                        </li>
+                        <li><a href="#" data-toggle="tooltip" data-placement="left" title="Plus"><i class="fa fa-google-plus"></i></a>
+                        </li>
+                        <li><a href="#" data-toggle="tooltip" data-placement="left" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                        <li><a href="#" data-toggle="tooltip" data-placement="left" title="Facebook"><i class="fa fa-facebook"></i></a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
+    </div>
 
 
-    <!--    //?key=AIzaSyBi5eid5IfgKSvzAypanPcTAcHahRXvOJI-->
     <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script src="http://www.google.com/jsapi"></script>
 
@@ -224,10 +223,9 @@
     <script src="scripts/datatable.js"></script>
     <script src="scripts/googleInfoWindow.js"></script>
     <script src="scripts/popup.js"></script>
-    
+
 
     <!-- DataTables -->
     <!-- endbuild -->
 </body>
-
 </html>
