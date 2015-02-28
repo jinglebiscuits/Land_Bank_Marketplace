@@ -37,4 +37,8 @@ body {
   /*padding-top: 60px;*/
 }
 
+.navbar {
+  background-color: green;
+}
+
 /*.googft-info-window { background-color: yellow }*/
