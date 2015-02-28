@@ -33,7 +33,8 @@ html, body, #map-canvas {
       }
 
 body {
-  padding-top: 60px;
+  height: 100%;
+  /*padding-top: 60px;*/
 }
 
 /*.googft-info-window { background-color: yellow }*/
