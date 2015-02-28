@@ -45,7 +45,8 @@ function updateMap(layer, tableID) {
             select: 'FULL_ADDRESS',
             from: tableID,
             where: "FULL_ADDRESS MATCHES  \'%" + input + "%\' "
-        }
+        },
+        templateId: 2
     });
     console.log(newLayer);
     layer.setMap(null);
