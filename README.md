@@ -6,3 +6,13 @@ Land banks properties are underused, abandoned, tax-delinquent ones that are mad
 3) Important loc based information like nearby grocery stores, malls, recreational areas and entertainment centers. This is achieved through the search abilities of the integrated Google Map.
 4) Pricing information and possible online bidding process if more than one party is interested.
 5) Possible advantages of buying a specified property. This is achieved through comments and inputs from citizens living in specific neighborhoods. These comments will be screened and categorized based on the zip code and address it came from. Along with the individual comments an overall consensus will also be posted.
+
+Technical notes:
+Many thanks to the open source projects on which we depend:
+Node,
+Node Package manager (npm),
+Grunt (Javascript task runner),
+Twitter bootstrap,
+And while not open source we did use: 
+Google Fusion Tables
+

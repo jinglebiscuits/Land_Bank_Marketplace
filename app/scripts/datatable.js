@@ -1,5 +1,3 @@
-var RESPONSE;
-
 function drawTable() {
     var queryText = encodeURIComponent(
         " SELECT FULL_ADDRESS,PARCELID" + " FROM " + tableID);
@@ -7,10 +5,11 @@ function drawTable() {
         'http://www.google.com/fusiontables/gvizdata?tq=' + queryText);
 
     query.send(function (response) {
-        RESPONSE = response.getDataTable();
         var numRows = response.getDataTable().getNumberOfRows();
         var numCols = response.getDataTable().getNumberOfColumns();
-        var ftdata = ['<table class="table table-striped table-hover"><thead><tr>'];
+        var ftdata = ['<section class="container">'
+            + '<input type="search" id="search"  class="form-control light-table-filter" placeholder="Search" data-table="order-table">'
+            + '<table class="table table-striped table-hove order-table tabler" id="datatable"><thead><tr>'];
         for (var i = 0; i < numCols; i++) {
             var columnTitle = response.getDataTable().getColumnLabel(i);
             ftdata.push('<th>' + columnTitle + '</th>');
@@ -21,17 +20,14 @@ function drawTable() {
             ftdata.push('<tr>');
             for (var j = 0; j < numCols; j++) {
                 var rowValue = response.getDataTable().getValue(i, j);
-                var columnTitle = response.getDataTable().getColumnLabel(j);
-                console.log('<td class = \"' + columnTitle + '\"> ' + rowValue + '</td>');
-                ftdata.push('<td class = \"' + columnTitle + '\"> ' + rowValue + '</td>');
+//                var columnTitle = response.getDataTable().getColumnLabel(j);
+                //                console.log('<td class = \"' + columnTitle + '\"> ' + rowValue + '</td>');
+                ftdata.push('<td>' + rowValue + '</td>');
             }
             ftdata.push('</tr>');
         }
-        ftdata.push('</tbody></table>');
+        ftdata.push('</tbody></table><section>');
         document.getElementById('ft-data').innerHTML = ftdata.join('');
     });
-    var options = {
-  valueNames: [ 'FULL_ADDRESS','PARCELID']
-};
-    var data = new List('ft-data', options);
+
 }
