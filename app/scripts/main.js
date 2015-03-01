@@ -35,6 +35,7 @@ function initialize() {
     var input = document.getElementById('input');
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
     LAYER.setMap(map);
+    introJs().start();
 }
 
 function updateMap(layer, tableID) {
