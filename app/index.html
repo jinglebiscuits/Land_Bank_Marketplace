@@ -42,13 +42,13 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav pull-right">
                         <li>
-                            <a href="#" data-toggle="modal" data-target="#background">Background</a>
+                            <a href="#" data-toggle="modal" data-target="#background" data-step="3" data-intro="Oh yeah!">Background</a>
                         </li>
                         <li>
-                            <a href="#" data-toggle="modal" data-target="#table" onclick="drawTable()">Table View</a>
+                            <a href="#" data-toggle="modal" data-target="#table" onclick="drawTable()" data-step="4" data-intro="Oh yeah!">Table View</a>
                         </li>
                         <li>
-                            <a href="#" data-toggle="modal" data-target="#request">Submit Offer</a>
+                            <a href="#" data-toggle="modal" data-target="#request" data-step="5" data-intro="Oh yeah!">Submit Offer</a>
                         </li>
                     </ul>
                 </div>
@@ -156,12 +156,15 @@
                 </div>
             </div>
         </div>
-        <input id="input" class="controls floating-label" type="text" placeholder="Search by Address or Zip Code">
+        <input id="input" class="controls floating-label" type="text" placeholder="Search by Address or Zip Code" data-step="1" data-intro="Welcome!"/>
         <div id="map-canvas"></div>
+        <button id="info-btn" style="position: absolute; bottom: 100px; left: 20px; z-index: 2" type="button" onclick="javascript:startIntro();">
+            <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+        </button>
         <div class="container footer">
             <div class="row">
                 <div id="inbox">
-                    <div class="fab btn-group show-on-hover dropup">
+                    <div class="fab btn-group show-on-hover dropup" data-step="2" data-intro="Oh yeah!">
                         <div data-toggle="tooltip" data-placement="left" title="Compose" style="margin-left: 42px;">
                             <button type="button" class="btn btn-danger btn-io dropdown-toggle" data-toggle="dropdown">
                             <span class="fa-stack fa-2x">

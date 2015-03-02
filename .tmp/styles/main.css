@@ -1,8 +1,30 @@
-html, body, #map-canvas {
+html {
         height: 100%;
         margin: 0px;
         padding: 0px
       }
+
+body {
+  height: 100%;
+  /*padding-top: 60px;*/
+}
+
+#map-canvas {
+  height: 100%;
+}
+
+#info-btn {
+  width: 38px;
+  height: 38px;
+  margin:0px !important;
+  padding:0px !important;
+  border-radius: 50%;
+  font-size: 32px;
+}
+
+#info-btn:hover {
+  
+}
 
 .controls {
         margin-top: 20px;
@@ -31,11 +53,6 @@ html, body, #map-canvas {
         padding-left: 14px;   Regular padding-left + 1. 
         width: 401px;
       }
-
-body {
-  height: 100%;
-  /*padding-top: 60px;*/
-}
 
 .navbar {
   background-color: green;
