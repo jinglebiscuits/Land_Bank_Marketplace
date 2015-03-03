@@ -37,16 +37,12 @@ function updateTable() {
             var input = $('#search').val().toUpperCase();
             var queryText = encodeURIComponent(
                 " SELECT FULL_ADDRESS " + " FROM " + tableID + " WHERE FULL_ADDRESS MATCHES \'%" + input + "%\'");
-            console.log(queryText);
             var query = new google.visualization.Query(
                 'http://www.google.com/fusiontables/gvizdata?tq=' + queryText);
             
             query.send(function (response) {
-                console.log(response);
                 var numRows = response.getDataTable().getNumberOfRows();
                 var numCols = response.getDataTable().getNumberOfColumns();
-                console.log(numCols);
-                console.log(numRows);
                 var ftdata = [];
                 for (var i = 0; i < numRows; i++) {
                     ftdata.push('<tr>');

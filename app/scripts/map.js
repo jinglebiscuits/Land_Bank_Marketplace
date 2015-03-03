@@ -22,9 +22,8 @@ function initialize() {
     });
     google.maps.event.addDomListener(document.getElementById('input'), 'keydown', function (e) {
         if (e.keyCode == 13) {
-            var input = document.getElementById('input').value;
 
-            updateMap(LAYER, tableID, input)
+            updateMap(LAYER, tableID);
             e.preventDefault();
         }
     });
@@ -36,7 +35,7 @@ function initialize() {
 
 function updateMap(layer, tableID) {
 
-    var input = document.getElementById('input').value.toUpperCase;
+    var input = $('#input').val().toUpperCase();
     var newLayer = new google.maps.FusionTablesLayer({
         query: {
             select: 'FULL_ADDRESS',

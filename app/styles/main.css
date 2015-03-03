@@ -24,6 +24,7 @@ body {
     font-size: 32px;
 }
 
+
 .controls {
     margin-top: 20px;
     border: 1px solid transparent;
@@ -55,4 +56,7 @@ body {
 .navbar.navbar {
     background-color:#0C6DB1;
     margin-bottom: 0px
+}
+.btn-primary:not(.btn-link):not(.btn-flat){
+    background-color:#0C6DB1;
 }
