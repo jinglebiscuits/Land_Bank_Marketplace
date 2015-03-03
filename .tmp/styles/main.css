@@ -1,61 +1,56 @@
 html {
-        height: 100%;
-        margin: 0px;
-        padding: 0px
-      }
+    height: 100%;
+    margin: 0px;
+    padding: 0px
+}
 
 body {
-  height: 100%;
-  /*padding-top: 60px;*/
+    height: 100%;
+    /*padding-top: 60px;*/
 }
 
 #map-canvas {
-  height: 100%;
+    height: 100%;
 }
 
 #info-btn {
-  width: 38px;
-  height: 38px;
-  margin:0px !important;
-  padding:0px !important;
-  border-radius: 50%;
-  font-size: 32px;
-}
-
-#info-btn:hover {
-  
+    width: 38px;
+    height: 38px;
+    margin: 0px !important;
+    padding: 0px !important;
+    border-radius: 50%;
+    font-size: 32px;
 }
 
 .controls {
-        margin-top: 20px;
-        border: 1px solid transparent;
-        border-radius: 2px 0 0 2px;
-        box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        height: 32px;
-        outline: none;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-      }
-
-      #input {
-        background-color: #fff;
-        padding: 0 11px 0px 13px;
-        width: 50%;
-        font-family: Roboto;
-        font-size: 15px;
-        font-weight: 300;
-        text-overflow: ellipsis;
-      }
-
-      #input:focus {
-        border-color: #4d90fe;
-        margin-left: -1px;
-        padding-left: 14px;   Regular padding-left + 1. 
-        width: 401px;
-      }
-
-.navbar {
-  background-color: green;
+    margin-top: 20px;
+    border: 1px solid transparent;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    height: 32px;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
-/*.googft-info-window { background-color: yellow }*/
+#input {
+    background-color: #fff;
+    padding: 0 11px 0px 13px;
+    width: 50%;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    text-overflow: ellipsis;
+}
+
+#input:focus {
+    border-color: #4d90fe;
+    margin-left: -1px;
+    padding-left: 14px;
+    Regular padding-left + 1. width: 401px;
+}
+
+.navbar.navbar {
+    background-color:#0C6DB1;
+    margin-bottom: 0px
+}
