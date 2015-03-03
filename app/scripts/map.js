@@ -1,8 +1,5 @@
 'use strict';
-var map;
-var tableID = '1MbTC65NjQ2Pxp9r0Ir_SnavY9NDzltgUUUIfOVKh';
-var loc = 'FULL_ADDRESS';
-var LAYER;
+
 
 function initialize() {
     google.load("visualization", "1", {
@@ -39,7 +36,7 @@ function initialize() {
 
 function updateMap(layer, tableID) {
 
-    var input = document.getElementById('input').value;
+    var input = document.getElementById('input').value.toUpperCase;
     var newLayer = new google.maps.FusionTablesLayer({
         query: {
             select: 'FULL_ADDRESS',

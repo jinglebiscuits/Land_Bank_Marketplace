@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/material.css" />
         <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/ripples.css" />
         <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+        <link rel="stylesheet" href="bower_components/intro.js/introjs.css" />
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
@@ -21,16 +22,15 @@
         <link type="text/css" rel="stylesheet" href="styles/pages.css">
         <link type="text/css" rel="stylesheet" href="styles/popup.css">
         <!-- endbuild -->
-        <link type="text/css" rel="stylesheet" href="intro.js/introjs.min.css">
     </head>
     <body>
         <!--[if lt IE 10]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <nav class="navbar navbar-inverse navbar-static-top" style="margin-bottom: 0px; background-color: #0C6DB1" role="navigation">
+        <nav class="navbar navbar-static-top" style="margin-bottom: 0px; background-color: #0C6DB1" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <h3 class="brand">Birmingham Land Bank Marketplace</h3>
+                    <h3>Land Bank Marketplace</h3>
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
@@ -54,6 +54,7 @@
                 </div>
             </div>
         </nav>
+        
         <div id="background" class="modal fade" tabindex="-1">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -104,43 +105,43 @@
                         <fieldset>
                             <div class="form-group">
                                 <div class="row">
-                                    <label for="inputName" class="col-lg-2 col-md-2 col-sm-2 control-label">Name:</label>
+                                    <label  class="col-lg-2 col-md-2 col-sm-2 control-label">Name:</label>
                                     <div class="col-lg-9">
                                         <input type="text" class="form-control" id="inputName" placeholder="Name">
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <label for="inputEmail" class="col-lg-2 col-md-2 col-sm-2 control-label">Email:</label>
+                                    <label class="col-lg-2 col-md-2 col-sm-2 control-label">Email:</label>
                                     <div class="col-lg-9">
                                         <input type="email" class="form-control" id="inputEmail" placeholder="Email">
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <label for="inputPhone" class="col-lg-2 col-md-2 col-sm-2 control-label">Phone:</label>
+                                    <label  class="col-lg-2 col-md-2 col-sm-2 control-label">Phone:</label>
                                     <div class="col-lg-9">
                                         <input type="number" class="form-control" id="inputPhone" placeholder="Phone">
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <label for="inputPropertyID" class="col-lg-2 col-md-2 col-sm-2 control-label">Property ID:</label>
+                                    <label class="col-lg-2 col-md-2 col-sm-2 control-label">Property ID:</label>
                                     <div class="col-lg-9">
                                         <input type="text" class="form-control" id="inputPropertyID" placeholder="Property ID">
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <label for="inputPropertyAddress" class="col-lg-2 col-md-2 col-sm-2 control-label">Property Address:</label>
+                                    <label class="col-lg-2 col-md-2 col-sm-2 control-label">Property Address:</label>
                                     <div class="col-lg-9">
                                         <input type="text" class="form-control" id="inputPropertyAddress" placeholder="Property Address">
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <label for="inputCity" class="col-lg-2 col-md-2 col-sm-2 control-label">City:</label>
+                                    <label class="col-lg-2 col-md-2 col-sm-2 control-label">City:</label>
                                     <div class="col-lg-9">
                                         <input type="City" class="form-control" id="inputCity" placeholder="City">
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <label for="textArea" class="col-lg-2 col-md-2 col-sm-2 control-label">Reasons and Offer:</label>
+                                    <label  class="col-lg-2 col-md-2 col-sm-2 control-label">Reasons and Offer:</label>
                                     <div class="col-lg-9">
                                         <textarea class="form-control" rows="3" id="textArea"></textarea>
                                     </div>
@@ -161,40 +162,7 @@
         <button id="info-btn" style="position: absolute; bottom: 100px; left: 20px; z-index: 2" type="button" onclick="javascript:startIntro();">
             <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
         </button>
-        <div class="container footer">
-            <div class="row">
-                <div id="inbox">
-                    <div class="fab btn-group show-on-hover dropup" data-step="2" data-intro="Oh yeah!">
-                        <div data-toggle="tooltip" data-placement="left" title="Compose" style="margin-left: 42px;">
-                            <button type="button" class="btn btn-danger btn-io dropdown-toggle" data-toggle="dropdown">
-                            <span class="fa-stack fa-2x">
-                                <i class="fa fa-circle fa-stack-2x fab-backdrop"></i>
-                                <i class="fa fa-plus fa-stack-1x fa-inverse fab-primary"></i>
-                                <i class="fa fa-pencil fa-stack-1x fa-inverse fab-secondary"></i>
-                            </span>
-                            </button>
-                        </div>
-                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
-                            <li>
-                                <a href="#" data-toggle="tooltip" data-placement="left" title="Twitter"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" data-toggle="tooltip" data-placement="left" title="Github"><i class="fa fa-github"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" data-toggle="tooltip" data-placement="left" title="Plus"><i class="fa fa-google-plus"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" data-toggle="tooltip" data-placement="left" title="Linkedin"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" data-toggle="tooltip" data-placement="left" title="Facebook"><i class="fa fa-facebook"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
         <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
         <script src="http://www.google.com/jsapi"></script>
         <!-- build:js(.) scripts/vendor.js -->
@@ -203,7 +171,7 @@
         <script src="bower_components/bootstrap-material-design/dist/js/material.js"></script>
         <script src="bower_components/bootstrap-material-design/dist/js/ripples.js"></script>
         <script src="bower_components/typeahead.js/dist/typeahead.bundle.js"></script>
-        <script src="bower_components/listjs/dist/list.js"></script>
+        <script src="bower_components/intro.js/intro.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:js(.) scripts/plugins.js -->
@@ -220,11 +188,13 @@
         <script src="bower_components/bootstrap/js/collapse.js"></script>
         <script src="bower_components/bootstrap/js/tab.js"></script>
         <!-- endbuild -->
-        <script src="intro.js/intro.min.js"></script>
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <script src="scripts/main.js"></script>
+        <script src="scripts/map.js"></script>
+        
         <script src="scripts/nav.js"></script>
         <script src="scripts/datatable.js"></script>
+        <script src="scripts/intro.js"></script>
         <script src="scripts/googleInfoWindow.js"></script>
         <script src="scripts/popup.js"></script>
         <!-- DataTables -->

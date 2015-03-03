@@ -5,7 +5,7 @@
     "bootstrap": "~3.2.0",
     "bootstrap-material-design": "~0.2.2",
     "typeahead.js": "~0.10.5",
-    "listjs": "~1.1.1",
-    "font-awesome": "~4.3.0"
+    "font-awesome": "~4.3.0",
+    "intro.js": "~1.0.0"
   }
 }
