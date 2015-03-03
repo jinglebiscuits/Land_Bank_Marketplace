@@ -36,7 +36,7 @@ function updateTable() {
         if (e.keyCode == 13) {
             var input = $('#search').val().toUpperCase();
             var queryText = encodeURIComponent(
-                " SELECT FULL_ADDRESS " + " FROM " + tableID + " WHERE FULL_ADDRESS MATCHES \'%" + input + "%\'");
+                " SELECT FULL_ADDRESS,PARCELID " + " FROM " + tableID + " WHERE FULL_ADDRESS MATCHES \'%" + input + "%\'");
             var query = new google.visualization.Query(
                 'http://www.google.com/fusiontables/gvizdata?tq=' + queryText);
             
