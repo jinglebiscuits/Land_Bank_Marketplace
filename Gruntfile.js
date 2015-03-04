@@ -161,13 +161,13 @@ module.exports = function (grunt) {
     },
 
     // Automatically inject Bower components into the HTML file
-    wiredep: {
-      app: {
-        ignorePath: /^\/|\.\.\//,
-        src: ['<%= config.app %>/index.html'],
-        exclude: ['bower_components/bootstrap/dist/js/bootstrap.js']
-      }
-    },
+//    wiredep: {
+//      app: {
+//        ignorePath: /^\/|\.\.\//,
+//        src: ['<%= config.app %>/index.html'],
+//        exclude: ['bower_components/bootstrap/dist/js/bootstrap.js']
+//      }
+//    },
 
     // Renames files for browser caching purposes
     rev: {
