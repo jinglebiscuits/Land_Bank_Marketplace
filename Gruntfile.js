@@ -161,13 +161,13 @@ module.exports = function (grunt) {
     },
 
     // Automatically inject Bower components into the HTML file
-//    wiredep: {
-//      app: {
-//        ignorePath: /^\/|\.\.\//,
-//        src: ['<%= config.app %>/index.html'],
-//        exclude: ['bower_components/bootstrap/dist/js/bootstrap.js']
-//      }
-//    },
+    wiredep: {
+      app: {
+        ignorePath: /^\/|\.\.\//,
+        src: ['<%= config.app %>/index.html'],
+        exclude: ['bower_components/bootstrap/dist/js/bootstrap.js']
+      }
+    },
 
     // Renames files for browser caching purposes
     rev: {
@@ -339,7 +339,7 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
-      'wiredep',
+//      'wiredep',
       'concurrent:server',
       'autoprefixer',
       'connect:livereload',
@@ -369,7 +369,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
-    'wiredep',
+//    'wiredep',
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
