@@ -14,10 +14,12 @@
     <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/material.css" />
     <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/ripples.css" />
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="//oss.maxcdn.com/jquery.trip.js/3.0.0/trip.min.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link type="text/css" rel="stylesheet" href="styles/main.css">
+    <link type="text/css" rel="stylesheet" href="styles/community.css">
     <!-- endbuild -->
 </head>
 
@@ -146,17 +148,83 @@
                         </div>
                     </fieldset>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="communityInput" class="modal fade" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 class="modal-title">Submit Report</h3>
+                </div>
+                <div class="modal-body">
+                    <label>Please Enter Full Address and Zip:</label>
+                    <div class="jumbotron">
+                    <input id = "" class="form-control floating-label" type="text" placeholder="Enter Full Address and Zip" />
+                    </div>
+                    <label>Property State:</label>
+                    <div class="jumbotron">
+                    <div class="btn-group btn-group-justified">
+                        <a class="btn btn-default btn-raised">Worst
+                        </a>
+                        <a class="btn btn-default btn-raised">Worse
+                        </a>
+                        <a class="btn btn-default btn-raised">Bad
+                        </a>
+                        <a class="btn btn-default btn-raised">Good
+                        </a>
+                        <a class="btn btn-default btn-raised">Better
+                        </a>
+                        <a class="btn btn-default btn-raised">Best
+                        </a>
+                    </div>
+                    </div>
+                    <label>Any other details?</label>
+                    <div class="jumbotron">
+                         <textarea class="form-control" rows="3" id="textArea"></textarea>
+                         <span class="help-block"> adfa asdfas dasdfasdafs </span>
+                    </div>
+                    <label>Upload a Photo:</label>
+                    <div class="jumbotron">
+                            <span class="mdi-image-camera-alt btn btn-info btn-fab btn-raised mdi-action-grade" ></span>
+                    </div>
+
+                </div>
                 <div class="modal-footer">
-                    <button class="btn btn-default" data-toggle="modal" data-target="#info">Additional Information</button>
                     <button class="btn btn-default" data-dismiss="modal">Cancel</button>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </div>
         </div>
     </div>
-    
+
+
+
     <input id="input" class="controls floating-label" type="text" placeholder="Search by Address or Zip Code" />
     <div id="map-canvas"></div>
+    <div id = "popupButton" class="container footer">
+            <div id="inbox">
+                <div class="fab btn-group show-on-hover dropup">
+                    <div data-toggle="tooltip" data-placement="left" title="Report" style="margin-left: 42px;">
+                        <button type="button" class="btn btn-danger btn-io dropdown-toggle" data-toggle="dropdown">
+                            <span class="fa-stack fa-2x">
+                                <i class="fa fa-circle fa-stack-2x fab-backdrop"></i>
+                                <i class="fa fa-plus fa-stack-1x fa-inverse fab-primary"></i>
+                                <i class="mdi-action-announcement fa-stack-1x fa-inverse fab-secondary" data-toggle="modal" data-target="#communityInput"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                       <li><a href="#" class="fa fa-twitter"></a></li>
+                        <li><a href="#" class="fa fa-google-plus"></a></li>
+                        <li><a href="#" class="fa fa-facebook"></a></li>
+                    </ul>
+                </div>
+            </div>
+        
+    </div>
 
     <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script src="http://www.google.com/jsapi"></script>
@@ -165,6 +233,7 @@
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/bootstrap-material-design/dist/js/material.js"></script>
     <script src="bower_components/bootstrap-material-design/dist/js/ripples.js"></script>
+    <script src="//oss.maxcdn.com/jquery.trip.js/3.0.0/trip.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:js(.) scripts/plugins.js -->
@@ -187,6 +256,8 @@
     <script src="scripts/nav.js"></script>
     <script src="scripts/table.js"></script>
     <script src="scripts/trip.js"></script>
+    <script src="scripts/community.js"></script>
+
     <!-- DataTables -->
     <!-- endbuild -->
 </body>

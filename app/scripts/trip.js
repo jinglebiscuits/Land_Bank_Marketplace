@@ -1,5 +1,5 @@
 var options = {
-    delay: 3000,
+    delay: -1,
     tripTheme: "yeti",
     showNavigation: true,
     showCloseBox: true,
@@ -7,7 +7,7 @@ var options = {
 };
 var trip = new Trip([
     {
-        content: "<h3>Welcome, We present a web based platform that provides comprehensive, flexible and easy communication between the city and its citizens.</h3><p>Use Right and Down arrows Go to next,</p> <p>Left and Up arrows Go back to previous,</p><p>Space pause / resume, </p><p>Esc Stop </p>",
+        content: "<h3>Welcome, We present a web based platform that provides comprehensive, flexible and easy communication between the city and its citizens.</h3><p>Use Right and Down arrows Go to next,</p> <p>Left and Up arrows Go back to previous,</p><p>Esc Stop </p>",
         position: 'screen-center',
         animation: 'fadeInUp',
         expose: true
@@ -44,6 +44,12 @@ var trip = new Trip([
         position: 'screen-center',
         animation: 'fadeInUP',
         expose: true
+    },
+    {
+        content: "This will be achieved by taking input from citizens living in the specific neighborhood. These comments will be screened and categorized based on the zip code and address it came from.  This portion of the system will enable the city to take in complaints and respond to them appropriately when they are submitted by the neighborhood.",
+        position: 'screen-center',
+        animation: 'fadeInUP',
+        expose: true
     }
 
 
@@ -54,18 +60,7 @@ $(".navbar-brand").on("click", function () {
     trip.start();
 });
 
-var tripIntro = new Trip([
-    {
-        content: " <h3>Welcome Brimingham Land Bank Market Place.</h3> Looking to own a home or land for less!" 
-+"Interested in rehabilitating your community and city! Consider buying a LAND BANK property!! "
-+"A sales pitch from the city to its citizens asking them to take the march towards its development into a flourishing environment. The success and" +"failure of this pitch depends on the effective communication established by the city with its citizens.<p><a class ='btn btn-primary btn-raised'" +"onclick = 'trip.start();'>Learn More?</a></p>"
-
-        ,
-        position: 'screen-center',
-        animation: 'fadeIn',
-        expose: true
-    }], options);
 
 $(document).ready(function () {
-    tripIntro.start();
+    trip.start();
 });

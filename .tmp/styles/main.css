@@ -2,9 +2,7 @@ html,
 body {
     height: 100%;
     width: 100%;
-    
 }
-
 
 #map-canvas {
     height: 100%;
@@ -23,6 +21,7 @@ body {
     outline: none;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
+
 
 #input {
     background-color: #fff;
